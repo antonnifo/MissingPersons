@@ -1,2 +1,7 @@
 # MissingPersons
-A missing persons board
+A missing persons board  
+The current methods for searching and reporting missing persons are ineffective and limited. Traditional methods such as using posters are slow, tedious, and do not cover a wide area, resulting in a limited number of people being aware of the missing person. Additionally, informing the police about a missing person can be inefficient, as they may ignore the report or take a long time to initiate a search. Furthermore, there is a risk of the police prematurely declaring a missing person as deceased after a certain period. These limitations have created a knowledge gap in the search and reporting process for missing persons. 
+
+To address these issues, this study aims to develop an effective system for reporting missing people. The proposed system will leverage technology to bridge the distance gap and ensure that a larger number of people are made aware of the missing person, thereby increasing the probability of finding them. The system will also address the limitations of existing methods. It will not be time-bound like the police investigations and will be available for use throughout the search period. By providing a user-friendly interface, the system will simplify and expedite the reporting process, saving valuable time for users.
+
+Overall, the proposed study will contribute significantly to improving the search and reporting mechanisms for missing persons. It will not only benefit researchers, but will also empower individuals who require an efficient system to report missing persons.  
