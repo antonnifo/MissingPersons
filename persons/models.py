@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
+from django.urls import reverse
 from hitcount.models import HitCount
+
 
 
 class Person(models.Model):
@@ -55,4 +57,4 @@ class Comment(models.Model):
         ]
 
     def __str__(self):
-        return self.last_name
+        return self.person
