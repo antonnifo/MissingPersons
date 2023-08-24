@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load hitcount_tags %}
+
+{% block content %}
+
+<!-- Main Wrapper -->
+<main class="main-wrapper">
+
+            <section class="blog pt-130 pb-100">
+            <div class="container">
+                <div class="row">
+
+                 {% for item in posts %}
+                    <div class="col-lg-4 col-md-6 mb-30">
+                        <div class="blog--block">
+                            <div class="blog--thumb">
+                                <a href="{{item.get_absolute_url}}"><img src="{{item.photo.url }}" alt="Blog" style="height: 14rem;"></a>
+                            </div>
+
+                            <div class="d-flex mt-20">
+                                <div><i class="fa-regular fa-eye"></i> {% get_hit_count for item %} </div>
+                         
+                                <div class="ml-10"><i class="fa-regular fa-calendar"></i> {{item.reported_at | naturaltime}}</div>
+                            
+                            </div>
+                            <div class="blog--content d-flex">
+         
+                                <div class="blog--text">
+                                    <h4><a href="{{item.get_absolute_url}}">{{item.first_name}} {{item.last_name}}</a>
+                                    </h4>
+                                    
+                                    <p>{{item.description | truncatewords:"21"}}</p>
+                                    <a href="{{item.get_absolute_url}}" class="read--more">More Info</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p> No Missing persons reported at the moment, please check back later</p>
+                {% endfor %}     
+
+                </div>
+
+
+                {% include "pagination.html" with page=posts  %}
+
+            </div>
+        </section>
+</main>        
+
+{% endblock content %}

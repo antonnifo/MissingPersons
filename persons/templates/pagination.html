@@ -1,0 +1,19 @@
+
+
+<div class="row pt-50">
+    <div class="col-sm-12">
+        <div class="basic-pagination mb-30">
+            <ul>
+                {% if page.has_previous %}
+                    <li><a href="?page={{ page.previous_page_number }}"><i class="fal fa-angle-left"></i></a></li>
+                {% endif %}
+
+                <li class="active"><a href="#">{{ page.number }}</a></li>
+
+                    {% if page.has_next %}
+                    <li><a href="?page={{ page.next_page_number }}"><i class="fal fa-angle-right"></i></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

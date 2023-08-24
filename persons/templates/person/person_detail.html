@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load hitcount_tags %}
+{% load static %}
+
+{% block content %}
+
+ <main class="main-wrapper">
+        <section class="movie--details border-bottom pb-45 pt-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-30">
+                        <div class="movie--details--thumb position-relative mb-40">
+                            <img src="{{person.photo.url}}" alt="">
+   
+                        </div>
+                        <div class="movie--details--title">
+                            <h2>{{person.first_name}} {{person.last_name}}</h2>
+                        </div>
+
+                        <div class="movie--details--meta mb-30">
+                            <ul>
+                                <li><i class="fal fa-clock"></i>Reported {{person.reported_at | naturaltime}}</li>
+                                
+                                <li><i class="fal fa-comment"></i>
+                                    {% with person.comments.count as total_comments %}                                                   
+                                        {{ total_comments }} comment{{ total_comments|pluralize }}                     
+                                    {% endwith %}	
+                                </li>
+                                <li><i class="fal fa-eye"></i>  {% get_hit_count for person %}</li>
+                              
+                            </ul>
+                        </div>
+                        <div class="movie--details--text mb-50">
+                            <p class="mb-25">{{person.description}}</p>
+                            
+                        </div>
+
+                            <div class="post-comments">
+                                <div class="blog-coment-title mb-30">
+                                    <h2>{% with person.comments.count as total_comments %}                                                   
+                                        {{ total_comments }} comment{{ total_comments|pluralize }}                     
+                                    {% endwith %}	</h2>
+                                </div>
+                                <div class="latest-comments">
+                                    <ul>
+                                        {% for item in comments %}
+                                        <li>
+                                            <div class="comments-box">
+                                                <div class="comments-avatar">
+                                                    <img src="{% static 'img/avator.jpg' %}" alt="">
+
+                                                </div>
+                                                <div class="comments-text">
+                                                    <div class="avatar-name">
+                                                        <h5>{{item.name}}</h5>
+                                                        <span>{{item.created | naturaltime}}</span>
+                                               
+                                                    </div>
+                                                    <p>{{item.comment}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {% empty %}
+                                            <p>Nothing at the moment please check back later</p>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="post-comments-form">
+
+                                {% if new_comment %}
+										<p>Your comment has been added. Thank You</p>
+								{% else %} 
+
+                                <div class="post-comments-title">
+                                    <h2>If you have any info that can help find {{person.last_name}} please comment below</h2>
+                                </div>
+
+                                <form id="contacts-form" class="conatct-post-form" method="post" action=".">{% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="contact-icon contacts-message">
+                                                <textarea name="comment" id="comments" cols="30" rows="10"
+                                                    placeholder="Your Information...." required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12">
+                                            <div class="contact-icon contacts-name">
+                                                <input type="text" name="name"  placeholder="Your Name.... " required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12">
+                                            <div class="contact-icon contacts-email">
+                                                <input type="text" name="phone" placeholder="Your Phone...." required>
+                                            </div>
+                                        </div>
+                  
+                                        <div class="col-xl-12">
+                                            <button class="btn btn--theme" type="submit">Post comment</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                {% endif %}
+                                
+                            </div>
+
+
+                    </div>
+                    <div class="col-lg-4 mb-30">
+                        <div class="movie--details--sidebar">
+                            <div class="movie--details--widget mb-40">
+                                <div class="movie--details--info">
+                                    <h2>More Info</h2>
+                                    <div class="single mb-25">
+                                        <h4>Found</h4>
+                                        <p>{{person.is_found}}</p>
+                                    </div>
+                                    <div class="single mb-25">
+                                        <h4>Reward</h4>
+                                        <p>KSH {{person.reward}}</p>
+                                    </div>
+                                    <div class="single mb-25">
+                                        <h4>Reported By</h4>
+                                        <p>{{person.reported_by.username}}</p>
+                                    </div>
+                                    <div class="single">
+                                        <h4>Phone to Call</h4>
+                                        <p>{{person.phone_to_call}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    
+
+ </main>
+{% endblock content %}
