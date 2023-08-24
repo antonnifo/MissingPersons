@@ -21,6 +21,9 @@ class Person(models.Model):
     reported_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='persons_reported')
 
+    phone_to_call = models.CharField(max_length=250)
+    reward =  models.CharField(max_length=250)   
+
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
                                         related_query_name='hit_count_generic_relation')
 
@@ -42,10 +45,11 @@ class Person(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='comments')
     person = models.ForeignKey(
         Person, on_delete=models.CASCADE, related_name='comments')
+
+    name = models.CharField(max_length=250)   
+    phone = models.CharField(max_length=250)     
     comment = models.TextField()
     active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
