@@ -1,0 +1,46 @@
+/****************************
+    Buttons
+****************************/
+.btn {
+    font-size: 15px;
+    color: $white;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    padding: 23.4px 40px;
+    border: 2px solid $border-color;
+    border-radius: 0;
+    @include transition (.3s);
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Bebas Neue';
+    @include transition(.4s);
+    &--theme {
+        background: $theme-color;
+        border: 2px solid transparent;
+        &:hover,
+        &:focus {
+            background: transparent;
+            border: 2px solid $theme-color;
+            color: $theme-color;
+            outline: 0;
+            @include transition(.4s);
+        }
+    }
+    &--line {
+        &::after {
+            width: 20px;
+            height: 2px;
+            background: $white;
+            content: "";
+            display: inline-block;
+            margin-left: 10px;
+            @include transition(.4s);
+            margin-top: -3px;
+            vertical-align: middle;
+        }
+        &:hover::after{
+            background: $theme-color;
+            @include transition(.4s);
+        }
+    }
+}

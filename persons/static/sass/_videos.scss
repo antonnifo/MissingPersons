@@ -1,0 +1,116 @@
+/****************************
+    Videos
+****************************/
+.video {
+    &--bg {
+        padding-top: 303px;
+        padding-bottom: 285px;
+    }
+    &--content {
+        & h2 {
+            @media #{$d-xs} {
+                font-size: 30px;
+            }
+        }
+        & a {
+            height: 150px;
+            width: 150px;
+            display: inline-block;
+            line-height: 150px;
+            border: 2px solid $white;
+            font-size: 17px;
+            color: $white;
+            border-radius: 50%;
+            margin-bottom: 45px;
+            position: relative;
+            @media #{$d-xs} {
+                height: 100px;
+                width: 100px;
+                line-height: 100px;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                width: 450px;
+                height: 450px;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                border: 2px solid rgba($color: $white, $alpha: 0.38);
+                border-radius: 50%;
+                @media #{$d-xs} {
+                    display: none;
+                }
+            }
+            &:hover {
+               border: 2px solid $theme-color;
+               color: $theme-color;
+            }
+        }
+        &--two {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            left: 0;
+            z-index: 12345;
+            & a {
+                margin-bottom: 30px;
+                @media #{$d-xs} {
+                    margin-bottom: 15px;
+                }
+                &::before {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+        &--h3 {
+            & a {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                left: 0;
+                height: 60px;
+                width: 60px;
+                line-height: 60px;
+                margin: 0 auto;
+                z-index: 12345;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    &--tag {
+        & span {
+            position: absolute;
+            right: 0;
+            height: 26px;
+            padding: 0 15px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #fff;
+            background: $theme-color;
+            line-height: 26px;
+            border-radius: 13px 0px 0px 13px;
+            top: 16px;
+             z-index: 12345;
+        }
+    }
+    &--thumb {
+        overflow: hidden;
+        & img {
+            width: 100%;
+        }
+        &::before {
+            z-index: 123;
+        }
+    }
+    &--block:hover .video--thumb img {
+        transform: scale(1.1) rotate(3deg);
+        @include transition (.4s);
+    }
+}

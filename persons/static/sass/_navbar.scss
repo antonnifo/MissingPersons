@@ -1,0 +1,117 @@
+/****************************
+    Nav bar
+****************************/
+.navbar--main {
+    & nav {
+        & ul {
+            & li {
+                display: inline-block;
+                margin-left: 35px;
+                position: relative;
+                @media #{$d-la} {
+                    margin-left: 23px;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+                @media #{$d-lg} {
+                    margin-left: 14px;
+                }
+
+                & a {
+                    color: $white;
+                    font-weight: 700;
+                    padding: 50px 0;
+                    display: block;
+                    font-size: 17px;
+                    font-family: 'Bebas Neue';
+                    letter-spacing: 0.1em;
+
+                    @media #{$d-lg} {
+                        font-size: 14px;
+                    }
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+
+                & ul.submenu {
+                    position: absolute;
+                    background: $white;
+                    width: 250px;
+                    top: 110%;
+                    left: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    padding: 25px 0;
+                    @include transition(.3s);
+                    border-top: 5px solid $theme-color;
+                    box-shadow: 0 0 10px 3px rgba(0, 0, 0, .05);
+                    z-index: 99;
+                    ;
+
+                    & li {
+                        margin: 0;
+                        display: block;
+
+                        &:hover a {
+                            color: $theme-color;
+                        }
+
+                        & a {
+                            padding: 7px 30px;
+                            color: $black;
+                            letter-spacing: 0;
+                            font-size: 21px;
+
+                            &:after {
+                                display: none;
+                            }
+                        }
+
+                        & ul.submenu {
+                            left: 100%;
+                            top: 0;
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+
+                        &:hover>ul.submenu {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+
+                &:hover ul.submenu {
+                    opacity: 1;
+                    visibility: visible;
+                    top: 96%;
+                }
+            }
+            .drop {
+                & a {
+                    &:after {
+                        content: "\f0d7";
+                        font-family: "font awesome 5 pro";
+                        font-size: 17px;
+                        padding-left: 7px;
+                        color: $grey-soft;
+                    }
+                }
+            }
+        }
+    }
+    &--h3 {
+        & nav {
+            & ul {
+                & li {
+                    & a {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}

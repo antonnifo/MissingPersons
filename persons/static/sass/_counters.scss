@@ -1,0 +1,52 @@
+/****************************
+    Counters
+****************************/
+.counter {
+    &--wrapper {
+        margin-left: 260px;
+        margin-right: 260px;
+        margin-top: -135px;
+        @media #{$d-la} {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        @media #{$d-lg} {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        @media #{$d-md} {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        @media #{$d-xs} {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+    &--block {
+        & span {
+            font-size: 60px;
+            line-height: 1;
+            font-family: 'Bebas Neue Book';
+            display: inline-block;
+        }
+        & h2 {
+            font-size: 60px;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        & p {
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: 15px;
+            @media #{$d-lg} {
+                font-size: 14px;
+            }
+        }
+    }
+}
+.counter--block:hover span {
+    transform: rotate(360deg);
+    display: inline-block;
+    transition: .9s;
+}

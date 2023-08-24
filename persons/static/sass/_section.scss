@@ -1,0 +1,13 @@
+/****************************
+    Section Common
+****************************/
+.section-title {
+    & span {
+        font-family: 'Open Sans', sans-serif;
+        display: inline-block;
+        margin-bottom: 11px;
+    }
+    & h2 {
+        letter-spacing: 0.05em;
+    }
+}

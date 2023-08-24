@@ -1,0 +1,32 @@
+/****************************
+    Sponsor
+****************************/
+.sponsor {
+    &--bg {
+        background: rgba($color: $theme-color, $alpha: 0.07);
+        margin: 0 260px;
+        @media #{$d-la} {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        @media #{$d-lg} {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        @media #{$d-md} {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        @media #{$d-xs} {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+}
+.sponsor--single>a {
+    display: block;
+    text-align: center;
+}
+.sponsor--single>a>img {
+    display: initial;
+}

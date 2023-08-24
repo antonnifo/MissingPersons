@@ -1,0 +1,397 @@
+/****************************
+    Sidebar
+****************************/
+.sidebar {
+    margin-left: 10px;
+    &--burger {
+        display: inline-block;
+        height: 65px;
+        width: 65px;
+        border: 2px solid $white;
+        position: relative;
+        @include transition (.4s);
+        &:hover {
+            border-color: $theme-color;
+        }
+        &:hover span::before,
+        &:hover span::after {
+            background: $theme-color;
+            @include transition (.4s);
+        }
+        & span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            text-align: center;
+            padding: 0 15px;
+            &::after,
+            &::before {
+                height: 2px;
+                background: $white;
+                content: "";
+                display: block;
+                width: 30px;
+                margin: 7.5px 0px;
+                @include transition (.4s);
+            }
+            &::before {
+                width: 25px;
+                margin-left: 5px;
+            }
+        }
+        &--h3 {
+            border: 2px solid $theme-color;
+            &:hover {
+                background: $theme-color;
+            }
+            &:hover span::before,
+            &:hover span::after {
+                background: $white;
+                @include transition (.4s);
+            }
+            & span {
+                &::after,
+                &::before {
+                    background: $theme-color;
+                }
+            }
+        }
+    }
+    &--h2 {
+        margin-left: 0;
+        margin-right: 100px;
+        @media #{$d-lax} {
+            margin-right: 40px;
+        }
+        @media #{$d-la} {
+            margin-right: 25px;
+        }
+        @media #{$d-lg} {
+            margin-right: 45px;
+        }
+        @media #{$d-md} {
+            margin-right: 25px;
+        }
+        @media #{$d-xs} {
+            margin-right: 0;
+        }
+        .sidebar--burger {
+            border: 2px solid $theme-color;
+            height: 60px;
+            &:hover {
+                background: $theme-color;
+            }
+            &:hover span::before,
+            &:hover span::after {
+                background: $white;
+            }
+            & span {
+                &::after,
+                &::before {
+                    background: $theme-color;
+                    @media #{$d-lg} {
+                        background: $white;
+                    }
+                    @media #{$d-md} {
+                        background: $white;
+                    }
+                    @media #{$d-xs} {
+                        background: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* menu */
+.offcanvas-overly {
+    position: fixed;
+    background: #000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.offcanvas-overly.active {
+    opacity: 0.7;
+    visibility: visible;
+}
+
+.menu-close {
+    color: #fff;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.menu-close i {
+    transition: .3s;
+}
+
+.menu-close:hover i {
+    transform: rotate(30deg);
+}
+
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 100vh;
+    z-index: 200;
+    overflow: hidden;
+    background-color: #111;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity ease 0.4s 0.6s;
+    -o-transition: opacity ease 0.4s 0.6s;
+    transition: opacity ease 0.4s 0.6s;
+
+    @media #{$d-lg} {
+        width: 400px;
+    }
+
+    @media #{$d-md} {
+        width: 350px;
+    }
+
+    @media #{$d-xs} {
+        width: 300px;
+    }
+}
+
+.primary-nav {
+    padding: 45px 60px;
+
+    @media #{$d-md} {
+        padding: 30px 30px;
+    }
+
+    @media #{$d-xs} {
+        padding: 30px 30px;
+    }
+}
+
+#menu-overlay.active {
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+    pointer-events: all;
+}
+
+#menu-overlay .container {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+#menu-overlay .content-wrapper {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+#menu-overlay .primary-nav li {
+    overflow: hidden;
+}
+
+#menu-overlay .primary-nav li a {
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 700;
+    display: block;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: color 0.2s ease-in-out, -webkit-transform ease 0.4s 0s;
+    transition: color 0.2s ease-in-out, -webkit-transform ease 0.4s 0s;
+    -o-transition: transform ease 0.4s 0s, color 0.2s ease-in-out;
+    transition: transform ease 0.4s 0s, color 0.2s ease-in-out;
+    transition: transform ease 0.4s 0s, color 0.2s ease-in-out, -webkit-transform ease 0.4s 0s;
+
+    @media #{$d-la} {
+        font-size: 30px;
+    }
+
+    @media #{$d-lg} {
+        font-size: 25px;
+    }
+
+    @media #{$d-md} {
+        font-size: 22px;
+    }
+
+    @media #{$d-xs} {
+        font-size: 20px;
+    }
+}
+
+#menu-overlay .primary-nav li:hover a {
+    color: white;
+}
+
+#menu-overlay .company-info {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    position: relative;
+    z-index: 22;
+    margin-bottom: -60px;
+    padding: 60px;
+    border-top: 1px solid #333;
+
+    @media #{$d-md} {
+        padding: 30px 30px;
+    }
+
+    @media #{$d-xs} {
+        padding: 30px 30px;
+    }
+}
+
+.company-info .info-email,
+.company-info .info-tel,
+.company-info .info-address,
+.company-info .sm-links {
+    -webkit-transform: translateY(25px);
+    -ms-transform: translateY(25px);
+    transform: translateY(25px);
+    opacity: 0;
+    -webkit-transition: all ease 0.4s 0.3s;
+    -o-transition: all ease 0.4s 0.3s;
+    transition: all ease 0.4s 0.3s;
+}
+
+.company-info .info-email,
+.company-info .info-tel {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    @media #{$d-md} {
+        margin-bottom: 10px;
+    }
+
+    @media #{$d-xs} {
+        margin-bottom: 10px;
+    }
+}
+
+.company-info .info-address {
+    max-width: 250px;
+    margin-top: 20px;
+
+    @media #{$d-md} {
+        margin-top: 10px;
+    }
+
+    @media #{$d-xs} {
+        margin-top: 10px;
+    }
+}
+
+.company-info .info-address p {
+    font-size: 16px;
+}
+
+.company-info .sm-links {
+    margin-top: 35px;
+
+    @media #{$d-md} {
+        margin-top: 20px;
+    }
+
+    @media #{$d-xs} {
+        margin-top: 20px;
+    }
+}
+
+.company-info .sm-links li {
+    display: inline-block;
+    margin-right: 22px;
+}
+
+.company-info .sm-links li a {
+    color: #8f8f8f;
+    font-size: 20px;
+}
+
+#menu-overlay.active .primary-nav li a {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform ease 0.7s 0.5s;
+    transition: -webkit-transform ease 0.7s 0.5s;
+    -o-transition: transform ease 0.7s 0.5s;
+    transition: transform ease 0.7s 0.5s;
+    transition: transform ease 0.7s 0.5s, -webkit-transform ease 0.7s 0.5s;
+}
+
+#menu-overlay.active .company-info .info-email {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all ease 0.7s 1.0s;
+    -o-transition: all ease 0.7s 1.0s;
+    transition: all ease 0.7s 1.0s;
+}
+
+#menu-overlay.active .company-info .info-tel {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all ease 0.7s 1.2s;
+    -o-transition: all ease 0.7s 1.2s;
+    transition: all ease 0.7s 1.2s;
+}
+
+#menu-overlay.active .company-info .info-address {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all ease 0.7s 1.4s;
+    -o-transition: all ease 0.7s 1.4s;
+    transition: all ease 0.7s 1.4s;
+}
+
+#menu-overlay.active .company-info .sm-links {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all ease 0.7s 1.6s;
+    -o-transition: all ease 0.7s 1.6s;
+    transition: all ease 0.7s 1.6s;
+}

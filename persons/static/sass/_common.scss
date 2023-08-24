@@ -1,0 +1,933 @@
+/* 1. Theme default css */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: $grey;
+    font-size: 15px;
+}
+
+.img {
+    max-width: 100%;
+    @include transition(.3s);
+    width: 100%;
+}
+img {
+    max-width: 100%;
+    @include transition(.3s);
+}
+
+.f-left {
+    float: left
+}
+
+.f-right {
+    float: right
+}
+
+.fix {
+    overflow: hidden
+}
+
+a:focus,
+.button:focus {
+    text-decoration: none;
+    outline: none;
+    @include transition(.4s);
+}
+
+a:focus,
+a:hover {
+    color: inherit;
+    text-decoration: none;
+    @include transition(.4s);
+}
+
+a,
+button {
+    color: inherit;
+    outline: medium none;
+    @include transition(.4s);
+}
+
+button:focus,
+input:focus,
+input:focus,
+textarea,
+textarea:focus {
+    outline: 0
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bebas Neue';
+    font-weight: normal;
+    color: $black;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: normal;
+    letter-spacing: 0.05em;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 55px;
+    @media #{$d-xs} {
+        font-size: 35px;
+    }
+}
+
+h3 {
+    font-size: 30px;
+    @media #{$d-xs} {
+        font-size: 20px;
+    }
+}
+
+h4 {
+    font-size: 24px;
+    @media #{$d-xs} {
+        font-size: 22px;
+    }
+}
+
+h5 {
+    font-size: 18px;
+    @media #{$d-xs} {
+        font-size: 16px;
+    }
+}
+
+h6 {
+    font-size: 16px;
+    @media #{$d-xs} {
+        font-size: 14px;
+    }
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none
+}
+
+p {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 26px;
+    color: $grey;
+    margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+    border-bottom: 1px solid $black;
+    border-top: 0 none;
+    margin: 30px 0;
+    padding: 0;
+}
+
+label {
+    color: $black-soft;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+*::-moz-selection {
+    background: $black;
+    color: $white;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: $black;
+    color: $white;
+    text-shadow: none;
+}
+
+::selection {
+    background: $black;
+    color: $white;
+    text-shadow: none;
+}
+
+/*--
+    - Input Placeholder
+-----------------------------------------*/
+*::-moz-placeholder {
+    color: $black;
+    font-size: 14px;
+    opacity: 1;
+}
+
+*::placeholder {
+    color: $black;
+    font-size: 14px;
+    opacity: 1;
+}
+
+
+/*--
+    - Common Classes
+-----------------------------------------*/
+.fix {
+    overflow: hidden
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*--
+    - Background color
+-----------------------------------------*/
+.grey-bg {
+    background: $grey-bg;
+}
+
+.white-bg {
+    background: $white;
+}
+
+.black-bg {
+    background: $black;
+}
+
+.theme-bg {
+    background: $theme-color;
+}
+
+.black-moju-bg {
+    background: $black-moju;
+}
+
+// .primary-bg {
+// 	background: #222;
+// }
+
+/*--
+    - color
+-----------------------------------------*/
+.white-color {
+    color: $white;
+}
+
+.black-color {
+    color: $black;
+}
+
+.theme-color {
+    color: $theme-color;
+}
+
+// .primary-color {
+// 	color: #222;
+// }
+
+/*--
+    - Margin & Padding
+-----------------------------------------*/
+/*-- Margin Top --*/
+@for $i from 1 through 40 {
+    .mt-#{5 * $i} {
+        margin-top: 5px * $i;
+    }
+}
+
+/*-- Margin Bottom --*/
+@for $i from 1 through 40 {
+    .mb-#{5 * $i} {
+        margin-bottom: 5px *$i;
+    }
+}
+
+/*-- Margin Left --*/
+@for $i from 1 through 40 {
+    .ml-#{5 * $i} {
+        margin-left: 5px * $i;
+    }
+}
+
+/*-- Margin Right --*/
+@for $i from 1 through 40 {
+    .mr-#{5 * $i} {
+        margin-right: 5px *$i;
+    }
+}
+
+/*-- Padding Top --*/
+@for $i from 1 through 40 {
+    .pt-#{5 * $i} {
+        padding-top: 5px *$i;
+    }
+}
+
+/*-- Padding Bottom --*/
+@for $i from 1 through 40 {
+    .pb-#{5 * $i} {
+        padding-bottom: 5px *$i;
+    }
+}
+
+/*-- Padding Left --*/
+@for $i from 1 through 40 {
+    .pl-#{5 * $i} {
+        padding-left: 5px *$i;
+    }
+}
+
+/*-- Padding Right --*/
+@for $i from 1 through 40 {
+    .pr-#{5 * $i} {
+        padding-right: 5px *$i;
+    }
+}
+// others common css here :)
+
+.fw-100 {
+    font-weight: 100;
+}
+.fw-200 {
+    font-weight: 200;
+}
+.fw-300 {
+    font-weight: 300;
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-600 {
+    font-weight: 600;
+}
+.fw-700 {
+    font-weight: 700;
+}
+
+// Common Links
+.read--more {
+    font-size: 15px;
+    font-weight: 700;
+    color: $black-soft;
+    letter-spacing: 0.1em;
+    font-family: 'Bebas Neue';
+    @include transition (.4s);
+
+    &::before {
+        content: "";
+        width: 25px;
+        height: 2px;
+        display: inline-block;
+        background: $black-soft;
+        vertical-align: middle;
+        margin-top: -3px;
+        margin-right: 13px;
+        @include transition (.4s);
+    }
+
+    &:hover {
+        color: $black;
+        @include transition (.4s);
+    }
+
+    &:hover::before {
+        background: $black;
+        @include transition (.4s);
+    }
+    &--h2 {
+        &::after {
+            content: "";
+            width: 25px;
+            height: 2px;
+            display: inline-block;
+            background: $black-soft;
+            vertical-align: middle;
+            margin-top: -3px;
+            margin-left: 13px;
+            @include transition (.4s);
+        }
+    }
+    &--h3 {
+        color: $white;
+        &::after,
+        &::before {
+            background: $white;
+        }
+        &:hover::after,
+        &:hover::before {
+            background: rgba($color: $white, $alpha: 0.8);
+        }
+        &:hover {
+            color: rgba($color: $white, $alpha: 0.8);
+        }
+    }
+}
+
+// Slider Option Customize
+.common-arrow{
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    &::before{
+        z-index: 1;
+        position: relative;
+        @include transition (.4s);
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        height: 80px;
+        width: 80px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 2px solid #484848;
+        border-radius: 50%;
+        @include transition (.4s);
+    }
+    &:hover::before{
+        color: $theme-color;
+        @include transition (.4s);
+    }
+    &:hover::after{
+        border-color: $theme-color;
+        @include transition (.4s);
+        transform: translateY(-50%) translateX(5px);
+    }
+    &--prev {
+        &::after {
+            right: 15px;
+        }
+    }
+    &--next {
+        &::after {
+            right: auto;
+            left: 15px;
+        }
+    }
+}
+
+
+.top--arrow {
+    font-size: 35px;
+    color: #a1a1a1;
+    top: -21%;
+    right: 0;
+    &::after {
+        height: 65px;
+        width: 65px;
+        border: 2px solid #e3e3e3;
+    }
+    &--prev {
+        right: 113px;
+        &::after {
+            right: 12px;
+        }
+    }
+    &--next {
+        right: 65px;
+        &::after {
+            right: auto;
+            left: 12px;
+        }
+    }
+    &--two  {
+        top: -35%;
+    }
+}
+
+.review-active .common-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.review-active .top--arrow--prev {
+    right: auto;
+    left: -20%;
+    @media #{$d-la} {
+        left: -2%;
+    }
+    @media #{$d-lg} {
+        left: 2%;
+    }
+    @media #{$d-md} {
+        left: 0%;
+    }
+}
+.review-active .top--arrow--next {
+    right: -20%;
+    @media #{$d-la} {
+        right: -2%;
+    }
+    @media #{$d-lg} {
+        right: 2%;
+    }
+    @media #{$d-md} {
+        right: 0%;
+    }
+}
+
+.slick-dots {
+    text-align: center;
+}
+.slick-dots li {
+    display: inline-block;
+    line-height: 1;
+}
+.slick-dots li button {
+    height: 20px;
+    width: 20px;
+    text-indent: -9999999px;
+    border: 3px solid #4e4e4e;
+    background: transparent;
+    border-radius: 50%;
+    padding: 0;
+    line-height: 1;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.slick-dots li.slick-active button {
+    border-color: $theme-color;
+}
+// -------
+
+.play--common {
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    color: #fff;
+    line-height: 80px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    @media #{$d-lg} {
+        margin-bottom: 20px;
+    }
+}
+.box {
+    padding-left: 55px;
+    padding-right: 55px;
+    @media #{$d-la} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    @media #{$d-lg} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    @media #{$d-md} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    @media #{$d-xs} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.review-activeh3 .common-arrow {
+    opacity: 1;
+    visibility: visible;
+}
+
+// Pages
+.page {
+    &--height {
+        min-height: 770px;
+        padding-top: 70px;
+        @media #{$d-xs} {
+            min-height: 470px;
+        }
+    }
+    &--title {
+        & h1 {
+            font-size: 120px;
+            letter-spacing: 0.1em;
+            @media #{$d-md} {
+                font-size: 100px;
+            }
+            @media #{$d-xs} {
+                font-size: 50px;
+            }
+        }
+    }
+    &--stroke {
+        position: absolute;
+        top: 175px;
+        right: 0;
+        left: 0;
+    }
+}
+.page--stroke>.stroke--title {
+    font-size: 300px;
+    text-align: center;
+    -webkit-text-stroke: 1px rgba($color: $white, $alpha: 0.07);
+    line-height: 0.95;
+    @media #{$d-xs} {
+        font-size: 80px;
+    }
+}
+.breadcrumb-list ul li {
+    display: inline-flex;
+    font-size: 24px;
+    color: #fff;
+    padding-left: 28px;
+    margin-left: 17px;
+    position: relative;
+    align-items: center;
+    vertical-align: middle;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: capitalize;
+    @media #{$d-xs} {
+        font-size: 17px;
+    }
+
+    &:hover {
+        a {
+            color: $theme-color;
+        }
+    }
+}
+
+.breadcrumb-list ul li::before {
+    position: absolute;
+    content: "\f105";
+    vertical-align: middle;
+    display: inline-block;
+    left: 0;
+    font-family: 'Font Awesome 5 Pro';
+}
+
+.breadcrumb-list ul li:first-child {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.breadcrumb-list ul li:first-child::before {
+    display: none;
+}
+
+// Movie List Filter
+.movie--list {
+    &--filter {
+        padding: 30px 40px 0;
+        border: 2px solid #f1f1f1;
+        @media #{$d-md} {
+            padding: 30px 30px 0;
+        }
+        @media #{$d-xs} {
+            padding: 30px 30px 0;
+        }
+        &--dark {
+            border: 2px solid #2f2f2f;
+        }
+        &--two {
+            padding: 50px;
+            border: 1px solid #e4e4e4;
+            @media #{$d-lg} {
+                padding: 20px;
+            }
+            @media #{$d-xs} {
+                padding: 20px;
+            }
+        }
+    }
+    &--input {
+        & input {
+            width: 100% !important;
+            height: 65px;
+            border-radius: 7px;
+            background: #f6f6f6;
+            font-size: 15px;
+            font-weight: 600;
+            color: #6a6a6a;
+            padding: 0 30px;
+            border: 0;
+            &::placeholder {
+                color: #6a6a6a;
+                font-size: 15px;
+            }
+        }
+        & button {
+            color: $theme-color;
+            position: absolute;
+            padding: 0;
+            border: 0;
+            line-height: 1;
+            background: transparent;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 30px;
+            font-size: 15px;
+        }
+        .nice-select {
+            width: 100% !important;
+            height: 65px;
+            border-radius: 7px;
+            background: #f6f6f6;
+            font-size: 15px;
+            font-weight: 600;
+            color: #6a6a6a;
+            padding: 0 30px;
+            border: 0;
+            line-height: 65px;
+        }
+        &--dark {
+            & input {
+                background: #2f2f2f;
+            }
+            .nice-select {
+                background: #2f2f2f;
+            }
+        }
+    }
+}
+
+.movie--list--input .nice-select::after {
+    border-bottom: 2px solid $theme-color;
+    border-right: 2px solid $theme-color;
+    height: 11px;
+    width: 11px;
+    right: 30px;
+}
+.filter-btn {
+    width: 100%;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    border-radius: 7px !important;
+}
+
+/* 25. Pagination  */
+.basic-pagination ul {
+    display: block;
+}
+
+.basic-pagination ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+@media (max-width: 767px) {
+    .basic-pagination ul li {
+        margin-bottom: 10px;
+    }
+}
+
+.basic-pagination ul li a {
+    height: 65px;
+    width: 65px;
+    line-height: 65px;
+    background: #ffffff;
+    color: #6a6a6a;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50%;
+    margin: 0px;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Bebas Neue';
+    border: 2px solid #e5e5e5;
+}
+
+.basic-pagination ul li a:hover,
+.basic-pagination ul li.active a {
+    background: transparent;
+    color: $theme-color;
+    border-color: $theme-color;
+}
+.basic-pagination {
+    text-align: center;
+}
+
+/* 19. Faq */
+.inner-faq-wrapper>h3 {
+    font-size: 28px;
+    padding-bottom: 30px;
+    margin-bottom: 60px;
+    border-bottom: 2px solid #eef1fe;
+}
+
+.inner-faq-wrapper>h3 i {
+    color: #ff3a46;
+    margin-right: 10px;
+}
+
+.faq-wrapper .card {
+    margin-bottom: 15px;
+    border-radius: 0;
+    border: none;
+    background: none;
+    border: 1px solid #ecf0f5;
+    border-bottom: 1px solid #ecf0f5 !important;
+}
+
+.faq-wrapper .card:last-child {
+    margin-bottom: 0;
+}
+
+.faq-wrapper .card-header {
+    padding: 0;
+    border-radius: 0;
+    background: no-repeat;
+    border: none;
+}
+
+.card-header:first-child {
+    border-radius: 0;
+}
+
+.faq-wrapper .card-header h5 a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    padding: 24px 30px;
+    text-decoration: none;
+    line-height: 1.4;
+    padding-right: 80px;
+    background: $theme-color;
+    position: relative;
+}
+.faq-wrapper .card-header h5 a i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+@media (max-width: 767px) {
+    .faq-wrapper .card-header h5 a {
+        font-size: 16px;
+        padding: 24px 30px 24px 24px;
+    }
+}
+
+.faq-wrapper .card-header h5 a.collapsed {
+    background: #f8f8f8;
+    color: #222222;
+}
+
+.faq-wrapper .card-header h5 a::after {
+    position: absolute;
+    content: "\f068";
+    top: 0;
+    right: 0;
+    font-family: "Font Awesome 5 Pro";
+    height: 100%;
+    width: 80px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 20px;
+    background: $theme-color;
+    font-weight: 400;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .faq-wrapper .card-header h5 a::after {
+        right: 0;
+    }
+}
+
+.faq-wrapper .card-header h5 a.collapsed::after {
+    content: "\f067";
+}
+
+.faq-wrapper .card-body {
+    -webkit-box-flex: unset;
+    -ms-flex: unset;
+    flex: unset;
+    padding: 0 31px;
+    color: #5f5f5f;
+    padding-bottom: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    background: #f8f8f8;
+    padding-top: 24px;
+}
+
+.card-text>p {
+    margin-bottom: 0;
+}
+
+/* bounce-animate */
+.bounce-animate {
+    animation-name: float-bob;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -moz-animation-name: float-bob;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: float-bob;
+    -ms-animation-duration: 2s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -o-animation-name: float-bob;
+    -o-animation-duration: 2s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+}
+
+@keyframes float-bob {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}
+@-webkit-keyframes float-bob {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}

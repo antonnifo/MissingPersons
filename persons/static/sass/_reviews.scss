@@ -1,0 +1,290 @@
+/****************************
+    Review
+****************************/
+.review {
+    &--bg {
+        background-attachment: fixed;
+    }
+    &--block {
+        display: flex;
+        align-items: center;
+        padding: 60px 35px 60px 13px;
+        border: 1px solid $border-review;
+        @media #{$d-lg} {
+            padding: 60px 13px 60px 13px;
+            flex-wrap: wrap;
+        }
+        @media #{$d-md} {
+            padding: 60px 13px 60px 13px;
+            flex-wrap: wrap;
+        }
+        @media #{$d-xs} {
+            padding: 60px 13px 60px 13px;
+            flex-wrap: wrap;
+        }
+        &--h3 {
+            padding: 50px 13px;
+            margin: 0 200px;
+            @media #{$d-lg} {
+                margin: 0 80px;
+            }
+            @media #{$d-md} {
+                padding: 50px 0px;
+                margin: 0 0px;
+            }
+            @media #{$d-xs} {
+                padding: 50px 0px;
+                margin: 0 0px;
+            }
+        }
+        &--h2 {
+            padding: 50px 60px;
+            margin: 0 0 35px 40px;
+            border: 1px solid #e9e9e9;
+            position: relative;
+            @media #{$d-lg} {
+                padding: 50px 24px;
+                margin: 0 0 35px 0px;
+            }
+            @media #{$d-xs} {
+                padding: 25px 14px;
+                margin: 0 0 35px 0px;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                background-image: url(../img/shape/review-arrow-shape-down.png);
+                width: 45px;
+                height: 21px;
+                background-repeat: no-repeat;
+                bottom: -21px;
+                background-position: bottom left;
+                left: 88px;
+            }
+        }
+        &--three {
+            padding: 50px 45px;
+            border: 2px solid rgba(221, 221, 221,0.20);
+            @media #{$d-xs} {
+                padding: 20px 20px;
+            }
+            &::after {
+                background-image: url(../img/shape/review-arrow-shape-down2.png);
+            }
+            & i {
+                position: absolute;
+                bottom: -23px;
+                right: 45px;
+                position: absolute;
+                height: 45px;
+                width: 45px;
+                display: inline-block;
+                text-align: center;
+                line-height: 45px;
+                background: #ef6330;
+                color: #fff;
+                border-radius: 50%;
+            }
+        }
+    }
+    &--text {
+        max-width: 270px;
+        text-align: right;
+        padding-right: 30px;
+        padding-left: 20px;
+        @media #{$d-lg} {
+            padding-right: 0px;
+            padding-left: 0px;
+            max-width: 100%;
+        }
+
+        @media #{$d-md} {
+            padding-right: 0px;
+            padding-left: 0px;
+            max-width: 100%
+        }
+
+        @media #{$d-xs} {
+            padding-right: 0px;
+            padding-left: 0px;
+            max-width: 100%
+        }
+        & p {
+            color: $white;
+            margin-bottom: 8px;
+        }
+        & ul {
+            & li {
+                display: inline-block;
+                font-size: 14px;
+                color: $theme-color;
+            }
+        }
+        &--h3 {
+            & p {
+                line-height: 1.9;
+                font-size: 18px;
+                color: $black;
+                margin-bottom: 30px;
+                @media #{$d-xs} {
+                    font-size: 15px;
+                }
+            }
+        }
+        &--h2 {
+            & p {
+                font-size: 20px;
+                line-height: 35px;
+                margin-bottom: 25px;
+                @media #{$d-xs} {
+                    font-size: 15px;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+    &--thumb {
+        & i {
+            position: absolute;
+            height: 45px;
+            width: 45px;
+            display: inline-block;
+            text-align: center;
+            line-height: 45px;
+            background: $theme-color;
+            color: #fff;
+            border-radius: 50%;
+            right: -18px;
+            top: -13px;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            height: 180px;
+            width: 180px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border: 1px solid $border-review;
+            border-radius: 50%;
+        }
+        &--h3 {
+            display: inline-block;
+            margin-bottom: 25px;
+            & i {
+                position: absolute;
+                height: 45px;
+                width: 45px;
+                display: inline-block;
+                text-align: center;
+                line-height: 45px;
+                background: $theme-color;
+                color: #fff;
+                border-radius: 50%;
+                top: 55px;
+                left: -30px;
+            }
+        }
+        &--h3 {
+            margin-left: 100px;
+        }
+        &--h2 {
+            margin-left: -80px;
+            @media #{$d-lg} {
+                margin-left: 0px;
+            }
+            & img {
+                animation: rotated 120s infinite linear;
+                @media #{$d-lg} {
+                    width: 100%;
+                }
+            }
+        }
+        &--three {
+            margin-left: 70px;
+            @media #{$d-xs} {
+                margin-left: 50px;
+            }
+        }
+    }
+    &--author {
+        display: flex;
+        align-items: center;
+        &--info {
+            padding-left: 30px;
+            position: relative;
+            & span {
+                display: inline-block;
+                width: 30px;
+                height: 2px;
+                background: #fff;
+                margin-bottom: 11px;
+            }
+            & h5 {
+                margin-bottom: 0;
+            }
+            & p {
+                font-size: 13px;
+            }
+        }
+        &--h3 {
+            & h5 {
+                font-size: 20px;
+                margin-bottom: 0;
+            }
+        }
+        &--h2 {
+            & h5 {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &--shape {
+        position: absolute;
+        @media #{$d-md} {
+            display: none;
+        }
+
+        @media #{$d-xs} {
+            display: none;
+        }
+        &--one {
+            left: 389px;
+            top: 100px;
+        }
+        &--two {
+            left: 0;
+            bottom: 100px;
+        }
+        &--three {
+            top: -45px;
+            right: 0;
+        }
+        &--four {
+            top: 30px;
+            left: 185px;
+            animation: scale-up-one 20s infinite linear;
+            @media #{$d-lg} {
+                left: 85px;
+            }
+        }
+        &--five {
+            bottom: 76px;
+            left: 100px;
+            animation: scale-up-one 15s infinite linear;
+            @media #{$d-lg} {
+                left: 185px;
+            }
+        }
+        &--six {
+            top: 30px;
+            right: 185px;
+            animation: scale-up-one 12s infinite linear;
+        }
+        &--seven {
+            bottom: 169px;
+            right: 140px;
+            animation: scale-up-one 18s infinite linear;
+        }
+    }
+}

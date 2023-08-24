@@ -1,0 +1,90 @@
+/****************************
+    Services
+****************************/
+.services {
+    &--block {
+        padding: 20px;
+        @media #{$d-xs} {
+            padding: 5px;
+        }
+        &:hover .services--thumb a {
+            opacity: 1;
+            visibility: visible;
+        }
+        &:hover .services--thumb::before {
+            opacity: 0.50;
+            visibility: visible;
+        }
+    }
+    &--content {
+        padding: 35px 26px 15px;
+        @media #{$d-lg} {
+           padding: 35px 0px 15px;
+        }
+        @media #{$d-xs} {
+           padding: 35px 0px 15px;
+        }
+        & span {
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    }
+    &--thumb {
+        & a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            background: $theme-color;
+            color: $white;
+            border-radius: 50%;
+            font-size: 20px;
+            @include transition (.4s);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 12;
+            &::before {
+                position: absolute;
+                content: "";
+                height: 80px;
+                width: 80px;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                @include transition (.4s);
+            }
+            &:hover::before {
+                border-color: $theme-color;
+                @include transition (.4s);
+            }
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: #000;
+            left: 0;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            @include transition (.4s);
+            z-index: 1;
+        }
+    }
+    &--thumb {
+        overflow: hidden;
+    }
+    &--block:hover .services--thumb img {
+        transform: scale(1.1) rotate(5deg);
+    }
+}

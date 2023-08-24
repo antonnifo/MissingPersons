@@ -1,0 +1,73 @@
+/****************************
+    About
+****************************/
+.about {
+    &--left {
+        &--h2 {
+            margin-left: -50px;
+            @media #{$d-md} {
+                margin-left: 0px;
+            }
+            @media #{$d-xs} {
+                margin-left: 0px;
+            }
+        }
+    }
+    &--text {
+        padding-right: 65px;
+        @media #{$d-xs} {
+            padding-right: 0px;
+        }
+        & h2 {
+            font-size: 50px;
+            letter-spacing: 0;
+        }
+        & p {
+            margin-bottom: 35px;
+        }
+        &--h2 {
+            padding-right: 50px;
+            @media #{$d-xs} {
+                padding-right: 0px;
+            }
+            & h3 {
+                font-family: 'Open Sans', sans-serif;
+                color: $black-soft;
+                letter-spacing: 0;
+                font-size: 18px;
+                font-weight: 600;
+                & span {
+                    font-size: 40px;
+                    color: $theme-color;
+                    font-family: 'Bebas Neue';
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+            }
+            & p {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &--title {
+        & h2 {
+            letter-spacing: 0;
+            margin-bottom: 15px;
+        }
+    }
+}
+.analysis {
+    &--box {
+        padding: 70px 112px 80px;
+        margin-top: -80px;
+        @media #{$d-lg} {
+            padding: 70px 0px 80px;
+        }
+        @media #{$d-md} {
+            padding: 70px 30px 80px;
+        }
+        @media #{$d-xs} {
+            padding: 70px 15px 80px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+/****************************
+    Award
+****************************/
+.award {
+    &--box {
+        padding: 0 165px;
+        margin-top: -310px;
+        @media #{$d-md} {
+           margin-top: -120px;
+        }
+        @media #{$d-xs} {
+           padding: 0 15px;
+           margin-top: -165px;
+        }
+    }
+}
