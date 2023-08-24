@@ -33,9 +33,30 @@ def person_detail(request, year, month, day, person):
                              reported_at__month=month,
                              reported_at__day=day)
 
+    latest_comments = Comment.objects.filter(active=True)
+    
+    # List of active comments for this post
+    comments = person.comments.filter(active=True)
+    new_comment = None
+
+    if request.method == 'POST':
+
+        name  = request.POST['name']
+        phone = request.POST['phone']
+        comment  = request.POST['comment']
+
+        new_comment = Comment(name=name, phone=phone,comment=comment)
+        
+        # Assign the current person to the comment
+        new_comment.person = person
+        
+        new_comment.save()                             
+
     context = {
                 'person': person,
-             
+                'latest_comments': latest_comments,
+                'comments': comments,
+                'new_comment': new_comment,           
     }
 
     # hitcount logic
